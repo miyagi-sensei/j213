@@ -22,7 +22,7 @@ void print_wall() {
 }
 
 int count_contrasts() {
-	int i, j, ans = 0;
+  int i, j, ans = 0;
   bool map[100][100] = {false};
 
   for (int i = 0; i < comb.size(); i++) {
@@ -45,7 +45,7 @@ int count_contrasts() {
 
 void combinations(int k, int offset) {
   int i;
-	if (k==0) {
+  if (k==0) {
     // print out that combination stored in comb vector
     // for (i=0; i<comb.size(); i++)
     // 	printf("(%d, %d) ", comb[i].first, comb[i].second);
@@ -65,9 +65,9 @@ void combinations(int k, int offset) {
 }
 
 int main() {
-    cin >> R >> C >> N;
-    combinations(N, 0);
-    cerr << Max_contrasts << endl;
-    print_wall();
-    return 0;
+  cin >> R >> C >> N;
+  combinations(N, 0);
+  cerr << Max_contrasts << endl;
+  print_wall();
+  return 0;
 }
