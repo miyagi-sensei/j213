@@ -44,24 +44,24 @@ int count_contrasts() {
 }
 
 void combinations(int k, int offset) {
-	int i;
+  int i;
 	if (k==0) {
-		// print out that combination stored in comb vector
-		// for (i=0; i<comb.size(); i++)
-		// 	printf("(%d, %d) ", comb[i].first, comb[i].second);
-		// cout << endl;
-		int n_contrasts = count_contrasts();
-		if (n_contrasts > Max_contrasts) {
-			Max_contrasts = n_contrasts;
-			best_comb = comb;
-		}
-		return;
-	}
-	for (i=offset; i<R*C; i++) {
-		comb.push_back({i / C, i % C});
-		combinations(k-1, i+1);
-		comb.pop_back();
-	}
+    // print out that combination stored in comb vector
+    // for (i=0; i<comb.size(); i++)
+    // 	printf("(%d, %d) ", comb[i].first, comb[i].second);
+    // cout << endl;
+    int n_contrasts = count_contrasts();
+    if (n_contrasts > Max_contrasts) {
+      Max_contrasts = n_contrasts;
+      best_comb = comb;
+    }
+    return;
+  }
+  for (i=offset; i<R*C; i++) {
+    comb.push_back({i / C, i % C});
+    combinations(k-1, i+1);
+    comb.pop_back();
+  }
 }
 
 int main() {
