@@ -27,11 +27,11 @@ def count_contrasts(black_cells):
 R, C, N = map(int, input().split())
 grid = product(range(R), range(C))
 max_contrasts = -1
-for black in comb(grid, N):
-    count = count_contrasts(black)
+for cells in comb(grid, N):
+    count = count_contrasts(cells)
     if count > max_contrasts:
         max_contrasts = count
-        best_wall = paint(black)
+        best_wall = paint(cells)
 for row in best_wall:
     for j in row:
         print(int(j), end='')
