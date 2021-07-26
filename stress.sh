@@ -9,7 +9,8 @@ g++ v3.cpp
 g++ verify.cpp -o verify
 # g++ gen.cpp -o gen
 
-for ((i = 1; ;i++)) do
+while true
+do
   # generate a new test case in the file named "in"
   # note that we pass i as a random seed to the generator
   python3 gen.py > in
